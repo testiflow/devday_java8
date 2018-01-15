@@ -1,4 +1,4 @@
-This project is just for testing various topics.
+This project was created for testing various topics.
 
 Topics
 ======
