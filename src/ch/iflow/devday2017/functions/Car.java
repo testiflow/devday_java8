@@ -13,6 +13,7 @@ public class Car {
     private int price;
     private Color color;
     private int year;
+    private boolean automatic;
     
     /**
      * Defines possible car colors.
@@ -36,12 +37,13 @@ public class Car {
         }
     }
     
-    public Car(String manufacturer, String model, Color color, int year, int price) {
+    public Car(String manufacturer, String model, Color color, int year, int price, boolean automatic) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.price = price;
         this.color = color;
         this.year = year;
+        this.automatic = automatic;
     }
 
     /**
@@ -50,15 +52,15 @@ public class Car {
     public static List<Car> makeCars() {
         List<Car> cars = new ArrayList<>();
         
-        cars.add(new Car("Audi", "A3", Car.Color.RED, 2011, 18900));
-        cars.add(new Car("Volkswagen", "Golf IV", Car.Color.BLACK, 2004, 7500));
-        cars.add(new Car("Volkswagen", "Golf V", Car.Color.WHITE, 2005, 8000));
-        cars.add(new Car("Audi", "A4", Car.Color.BLUE, 2016, 39000));
-        cars.add(new Car("Toyota", "Yaris", Car.Color.WHITE, 2011, 10400));
-        cars.add(new Car("Opel", "Corsa", Car.Color.BLACK, 2008, 7000));
-        cars.add(new Car("Opel", "Corsa", Car.Color.RED, 2007, 6000));
-        cars.add(new Car("Toyota", "Prius", Car.Color.RED, 2008, 8650));
-        cars.add(new Car("Audi", "80", Car.Color.RED, 1995, 3500));
+        cars.add(new Car("Audi", "A3", Car.Color.RED, 2011, 18900, true));
+        cars.add(new Car("Volkswagen", "Golf IV", Car.Color.BLACK, 2004, 7500, false));
+        cars.add(new Car("Volkswagen", "Golf V", Car.Color.WHITE, 2005, 8000, true));
+        cars.add(new Car("Audi", "A4", Car.Color.BLUE, 2016, 39000, false));
+        cars.add(new Car("Toyota", "Yaris", Car.Color.WHITE, 2011, 10400, false));
+        cars.add(new Car("Opel", "Corsa", Car.Color.BLACK, 2008, 7000, false));
+        cars.add(new Car("Opel", "Corsa", Car.Color.RED, 2007, 6000, false));
+        cars.add(new Car("Toyota", "Prius", Car.Color.RED, 2008, 8650, false));
+        cars.add(new Car("Audi", "80", Car.Color.RED, 1995, 3500, true));
         
         return cars;
     }
@@ -96,5 +98,9 @@ public class Car {
     
     public int getYear() {
         return year;
+    }
+    
+    public boolean isAutomatic() {
+        return automatic;
     }
 }
